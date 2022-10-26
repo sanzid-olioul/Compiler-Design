@@ -1,6 +1,6 @@
 import re
 import os
-
+from pre_processor.comments import DeleteComments
 #File path related stuff
 BASE_DIR = os.getcwd()
 FILE_NAME = 'source.cpp'
@@ -19,6 +19,9 @@ DATATYPES = ('int','char','double','float','void')
 
 
 def is_preprocessor(line):
+    '''
+    Checking whether it is a valid preprocessor or not!
+    '''
     if line[0] != '#':
         return False
     else:
@@ -44,12 +47,26 @@ def is_preprocessor(line):
                     raise Exception('Syntax err , Please check',line)
 
 
+
+
+# def find_main():
+#     if 'main' in line:
+#         # match = re.findall(r'int[/s]+main[/s]+([/s]+)[/s/n]*{[a-zA-Z0-9]*}')
+
 #File opening for check
+
 with open(FilePath,'r') as f:
-    linr_number = 1
-    for line in f:
-        line = line.strip()
-        tags = line.split(' ')
-        is_preprocessor(line)
-        print(linr_number,tags)
-        linr_number+=1
+    txt = f.read()
+    code = DeleteComments(txt)
+    code = code()
+    print(code)
+
+
+# with open(FilePath,'r') as f:
+#     linr_number = 1
+#     for line in f:
+#         line = line.strip()
+#         tags = line.split(' ')
+#         is_preprocessor(line)
+#         print(linr_number,tags)
+#         linr_number+=1
