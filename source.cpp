@@ -1,5 +1,8 @@
 #include<stdio.h>
-#include "head.h"  
+#include<conio.h>
+#include<math.h>
+#include<string.h>
+#include"head.h"
 int main()
 {
     //I am here to help you
