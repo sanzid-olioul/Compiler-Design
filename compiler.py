@@ -1,6 +1,11 @@
 import re
 import os
+import sys
+sys.path.insert(1,os.path.join(os.getcwd(),'pre_processor'))
+print(os.path.join(os.getcwd(),'pre_processor'))
 from pre_processor.comments import DeleteComments
+from pre_processor.headers import Headers
+
 #File path related stuff
 BASE_DIR = os.getcwd()
 FILE_NAME = 'source.cpp'
@@ -58,8 +63,10 @@ def is_preprocessor(line):
 with open(FilePath,'r') as f:
     txt = f.read()
     code = DeleteComments(txt)
-    code = code()
-    print(code)
+    head = Headers(txt)
+    head = head()
+    # code = code()
+    print(head)
 
 
 # with open(FilePath,'r') as f:

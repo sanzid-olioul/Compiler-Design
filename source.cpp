@@ -3,6 +3,8 @@
 #include<math.h>
 #include<string.h>
 #include"head.h"
+float func()
+void frc()
 int main()
 {
     //I am here to help you
