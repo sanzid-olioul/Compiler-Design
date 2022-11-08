@@ -1,19 +1,18 @@
 #include<stdio.h>
-#include<conio.h>
-#include<math.h>
-#include<string.h>
-#include"head.h"
-float func()
-void frc()
+#include "other.h"
 int main()
 {
-    //I am here to help you
-    printf("Hwllow world!");
+    int a
+    if(a==0);
     
-    /*
-    I am here to removed
-    
-    */
 
-    return 0;
+        /*
+        i am here bro;
+        
+        */
+
+        printf("Hellow hii there");//hellow there
+    
+    return 0 
+    }
 }
