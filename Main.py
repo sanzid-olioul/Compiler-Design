@@ -4,7 +4,7 @@ sys.path.append(os.path.join(os.getcwd(),'preprocessor'))
 sys.path.append(os.path.join(os.getcwd(),'error'))
 from preprocessor import RemoveComments
 from preprocessor import Headers
-from preprocessor import FunctionGrabber
+from tokenization import FunctionGrabber
 BASE_PATH = os.getcwd()
 SOURCE_FILE = 'Source.cpp'
 FILE_PATH = os.path.join(BASE_PATH,SOURCE_FILE)
@@ -23,7 +23,7 @@ headers = Headers('\n'.join(SOURCE_CODE))
 DEFINED_FUNCTIONS = headers()
 if DEFINED_FUNCTIONS.get('main',None):
     main = DEFINED_FUNCTIONS['main']
-    FUNCTION_CALLED,ERRORS = FunctionGrabber(SOURCE_CODE,SOURCE_LINE,'main',main['return_type']).check()
+    *FUNCTION_CALLED,ERRORS = FunctionGrabber(SOURCE_CODE,SOURCE_LINE,'main',main['return_type']).check()
     if len(ERRORS)==0:
         ERRORS = None
     else:
@@ -35,5 +35,3 @@ if DEFINED_FUNCTIONS.get('main',None):
 
 if not ERRORS:
     print('Build Successfullu..')
-
-
