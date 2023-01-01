@@ -1,1 +1,1 @@
-from error.error_type import FileNotFound,SyntaxError,MethodNotDeclear,VariableNotDeclear,ReturnStatementNotFound
+from error.error_type import FileNotFound,SyntaxError,MethodNotDeclear,VariableNotDeclear,ReturnStatementNotFound,AlreadyDefined

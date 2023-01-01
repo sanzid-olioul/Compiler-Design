@@ -12,3 +12,5 @@ class VariableNotDeclear(Exception):
 
 class ReturnStatementNotFound(Exception):
     pass
+class AlreadyDefined(Exception):
+    pass
